@@ -1,12 +1,15 @@
 // External dependencies
 import React from "react";
 
-// Estilização
+// Internal dependencies
+import RepositoryList from "./components/RepositoryList";
+
+// Styling
 import './styles/global.scss'
 
 const App = () => {
   
-  return <h1>Hello World</h1>;
+  return <RepositoryList />;
 };
 
 export default App;
