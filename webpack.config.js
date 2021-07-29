@@ -10,11 +10,11 @@ module.exports = {
   devtool: isDevelopment ? "eval-source-map" : "source-map",
   entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", "tsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   devServer: {
     contentBase: path.resolve(__dirname, "public"),
