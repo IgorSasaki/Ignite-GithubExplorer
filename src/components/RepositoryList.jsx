@@ -1,8 +1,8 @@
 // External dependencies
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Internal dependencies
-import RepostoryItem from "./RepositoryItem";
+import RepositoryItem from "./RepositoryItem";
 
 // Styling
 import "../styles/repositories.scss";
@@ -14,15 +14,22 @@ const repository = {
 };
 
 function RepositoryList() {
+  const [repositories, setRepositories] = useState([]);
+
+  useEffect(() => {
+    fetch("http://api.github.com/orgs/rocketseat/repos")
+      .then((response) => response.json())
+      .then((data) => setRepositories(data));
+  }, []);
+
   return (
     <section className="respository-list">
       <h1>Lista de Repositórios #1</h1>
 
       <ul>
-        <RepostoryItem repository={repository} />
-        <RepostoryItem repository={repository} />
-        <RepostoryItem repository={repository} />
-        <RepostoryItem repository={repository} />
+        {repositories.map((repository) => (
+          <RepositoryItem key={repository.name} repository={repository} />
+        ))}
       </ul>
     </section>
   );
