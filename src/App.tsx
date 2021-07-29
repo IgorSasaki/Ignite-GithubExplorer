@@ -5,10 +5,9 @@ import React from "react";
 import RepositoryList from "./components/RepositoryList";
 
 // Styling
-import './styles/global.scss'
+import "./styles/global.scss";
 
 const App = () => {
-  
   return <RepositoryList />;
 };
 
